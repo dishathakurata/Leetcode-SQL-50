@@ -1,0 +1,7 @@
+/570. Managers with at least 5 direct reports
+
+SELECT E1.name FROM Employee E1
+    JOIN (SELECT managerId, COUNT(*) FROM Employee E2
+            GROUP BY managerId
+            HAVING COUNT(*) >= 5) E2
+    On E2.managerId = E1.id;
