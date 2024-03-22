@@ -1,0 +1,6 @@
+//1070. Product sales analysis III
+
+SELECT product_id, year first_year, quantity, price FROM Sales S
+WHERE year = (SELECT MIN(year) FROM Sales 
+              WHERE S.product_id = product_id 
+              GROUP BY product_id);
