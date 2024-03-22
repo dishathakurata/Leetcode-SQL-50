@@ -1,0 +1,5 @@
+//1148. Article views I
+
+SELECT DISTINCT(author_id) AS id FROM Views
+WHERE author_id = viewer_id AND viewer_id >= 1
+ORDER BY author_id;
