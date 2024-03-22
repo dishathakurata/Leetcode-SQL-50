@@ -1,0 +1,4 @@
+//197. Rising temperature
+
+SELECT DISTINCT(t2.id) FROM Weather t1, Weather t2
+WHERE t1.temperature < t2.temperature AND t2.recordDate - t1.recordDate = 1; 
