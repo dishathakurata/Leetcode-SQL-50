@@ -1,3 +1,0 @@
-//1068. Product sales analysis I
-
-SELECT P.product_name, S.year, S.price FROM Sales S JOIN Product P on S.product_id = P.product_id;
