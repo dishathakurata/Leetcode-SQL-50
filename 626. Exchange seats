@@ -1,0 +1,8 @@
+//626. Exchange seats
+
+SELECT b.id, a.student FROM Seat a, Seat b
+WHERE (MOD(a.id, 2) = 1 AND (a.id + 1 = b.id)) 
+    OR (MOD(a.id, 2) = 0 AND a.id - 1 = b.id) 
+    OR (MOD(b.id,2) = 1 AND a.id = b.id 
+        AND b.id = (SELECT COUNT(*) FROM Seat))
+ORDER BY b.id;
